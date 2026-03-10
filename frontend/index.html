@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express Railway - Online Ticket Reservation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <i class="fas fa-train"></i>
+                <h1>Express Railway</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active"><i class="fas fa-ticket-alt"></i> Book Tickets</a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="banner">
+        <div class="banner-text">
+            <h2>Journey to New Adventures</h2>
+            <p>Book your train tickets quickly and securely.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="booking-panel">
+            <h2><i class="fas fa-ticket-alt"></i> Railway Ticket Reservation</h2>
+            
+            <form id="ticketForm">
+                <div class="form-sections">
+                    <div class="form-section">
+                        <h3>Passenger Details</h3>
+                        <div class="form-group">
+                            <label for="name"><i class="fas fa-user"></i> Full Name</label>
+                            <input type="text" id="name" placeholder="Enter your full name" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label for="age"><i class="fas fa-birthday-cake"></i> Age</label>
+                                <input type="number" id="age" placeholder="Enter age" min="1" max="120" required>
+                            </div>
+                            
+                            <div class="form-group half">
+                                <label for="gender"><i class="fas fa-venus-mars"></i> Gender</label>
+                                <select id="gender" required>
+                                    <option value="">Select Gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="idType"><i class="fas fa-id-card"></i> ID Type</label>
+                            <select id="idType" required>
+                                <option value="">Select ID Type</option>
+                                <option value="Aadhar">Aadhar Card</option>
+                                <option value="PAN">PAN Card</option>
+                                <option value="Passport">Passport</option>
+                                <option value="Driving">Driving License</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="idNumber"><i class="fas fa-fingerprint"></i> ID Number</label>
+                            <input type="text" id="idNumber" placeholder="Enter ID number" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3>Journey Details</h3>
+                        <div class="form-group">
+                            <label for="train"><i class="fas fa-subway"></i> Train Number/Name</label>
+                            <input type="text" id="train" placeholder="Enter train number or name" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label for="from"><i class="fas fa-map-marker-alt"></i> From</label>
+                                <input type="text" id="from" placeholder="Departure station" required>
+                            </div>
+                            
+                            <div class="form-group half">
+                                <label for="to"><i class="fas fa-map-pin"></i> To</label>
+                                <input type="text" id="to" placeholder="Arrival station" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label for="date"><i class="fas fa-calendar-alt"></i> Journey Date</label>
+                                <input type="date" id="date" required>
+                            </div>
+                            
+                            <div class="form-group half">
+                                <label for="time"><i class="fas fa-clock"></i> Preferred Time</label>
+                                <select id="time" required>
+                                    <option value="">Select Time</option>
+                                    <option value="Morning">Morning (6 AM - 12 PM)</option>
+                                    <option value="Afternoon">Afternoon (12 PM - 6 PM)</option>
+                                    <option value="Evening">Evening (6 PM - 10 PM)</option>
+                                    <option value="Night">Night (10 PM - 6 AM)</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label for="class"><i class="fas fa-couch"></i> Travel Class</label>
+                                <select id="class" required>
+                                    <option value="">Select Class</option>
+                                    <option value="Sleeper">Sleeper</option>
+                                    <option value="AC3">AC 3-Tier</option>
+                                    <option value="AC2">AC 2-Tier</option>
+                                    <option value="AC1">AC First Class</option>
+                                    <option value="Chair Car">Chair Car</option>
+                                    <option value="Executive">Executive Class</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group half">
+                                <label for="tickets"><i class="fas fa-users"></i> Number of Tickets</label>
+                                <input type="number" id="tickets" placeholder="No. of tickets" min="1" max="6" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="preference"><i class="fas fa-bed"></i> Berth Preference</label>
+                            <select id="preference">
+                                <option value="">No Preference</option>
+                                <option value="Lower">Lower</option>
+                                <option value="Middle">Middle</option>
+                                <option value="Upper">Upper</option>
+                                <option value="Side Lower">Side Lower</option>
+                                <option value="Side Upper">Side Upper</option>
+                                <option value="Window">Window Seat</option>
+                                <option value="Aisle">Aisle Seat</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3>Contact Details</h3>
+                        <div class="form-group">
+                            <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                            <input type="email" id="email" placeholder="Enter your email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone"><i class="fas fa-phone"></i> Phone Number</label>
+                            <input type="tel" id="phone" placeholder="Enter your phone number" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="address"><i class="fas fa-home"></i> Address</label>
+                            <textarea id="address" placeholder="Enter your address" rows="3"></textarea>
+                        </div>
+                        
+                        <div class="form-group checkbox">
+                            <input type="checkbox" id="notifications" checked>
+                            <label for="notifications">Receive booking updates via SMS/Email</label>
+                        </div>
+                        
+                        <div class="form-group checkbox">
+                            <input type="checkbox" id="terms" required>
+                            <label for="terms">I agree to the <a href="#">terms and conditions</a></label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="payment-option">
+                    <h3>Payment Method</h3>
+                    <div class="payment-methods">
+                        <div class="payment-method">
+                            <input type="radio" name="payment" id="credit" value="credit" checked>
+                            <label for="credit"><i class="fas fa-credit-card"></i> Credit/Debit Card</label>
+                        </div>
+                        <div class="payment-method">
+                            <input type="radio" name="payment" id="upi" value="upi">
+                            <label for="upi"><i class="fas fa-mobile-alt"></i> UPI</label>
+                        </div>
+                        <div class="payment-method">
+                            <input type="radio" name="payment" id="netbanking" value="netbanking">
+                            <label for="netbanking"><i class="fas fa-university"></i> Net Banking</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="submit" class="primary-btn"><i class="fas fa-ticket-alt"></i> Book Ticket</button>
+            </form>
+            
+            <div id="responseMessage" class="response-message"></div>
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Secure Payments</h3>
+                <p>All your payment information is encrypted and secure.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-undo-alt"></i>
+                <h3>Easy Cancellation</h3>
+                <p>Cancel tickets with minimal cancellation fees.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-headset"></i>
+                <h3>24/7 Support</h3>
+                <p>Our customer service team is always ready to help.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal" id="confirmationModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2><i class="fas fa-check-circle"></i> Booking Confirmation</h2>
+            <div id="bookingDetails"></div>
+            <button class="primary-btn" id="downloadTicket"><i class="fas fa-download"></i> Download Ticket</button>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Express Railway</h3>
+                <p>Connecting destinations, creating memories.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Train Schedule</a></li>
+                    <li><a href="#">PNR Status</a></li>
+                    <li><a href="#">Cancellation</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Information</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Railway Street, City</p>
+                <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+                <p><i class="fas fa-envelope"></i> support@expressrailway.com</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Express Railway. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
